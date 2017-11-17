@@ -26,7 +26,10 @@
 #import "ABCDService.h"
 #import "ABCDService+Private.h"
 
-@implementation ABCDService
+@implementation ABCDService {
+    BOOL _shouldFinish;
+}
+
 - (instancetype)init {
     return [self initWithIdentifier:nil];
 }
@@ -35,16 +38,13 @@
     self = [super init];
     if (self) {
         _identifier = identifier;
+        _shouldFinish = NO;
     }
     return self;
 }
 
 - (BOOL)shouldFinish {
-    return [self.thread isCancelled];
-}
-
-- (void)private_setCurrentThread:(NSThread *)thread {
-        _thread = thread;
+    return _shouldFinish;
 }
 
 - (void)private_setServiceManager:(ABCDServiceManager *)serviceManager {
@@ -58,7 +58,7 @@
 }
 
 - (void)private_finish {
-    [self.thread cancel];
+    _shouldFinish = YES;
 }
 
 - (void)start {

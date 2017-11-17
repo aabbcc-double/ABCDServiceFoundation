@@ -21,6 +21,13 @@
 		BA7907111FBC67AF00C3EC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7907101FBC67AF00C3EC63 /* Assets.xcassets */; };
 		BA7907141FBC67AF00C3EC63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7907121FBC67AF00C3EC63 /* LaunchScreen.storyboard */; };
 		BA7907171FBC67AF00C3EC63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7907161FBC67AF00C3EC63 /* main.m */; };
+		BAD7DC9D1FBF08100089AF60 /* ABCDThreadedService.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAD7DC9E1FBF08100089AF60 /* ABCDThreadedService.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */; };
+		BAD7DCA01FBF09CF0089AF60 /* ABCDThreadedService+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */; };
+		BAD7DCA41FBF0DE40089AF60 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */; };
+		BAD7DCA51FBF0DE40089AF60 /* ReactiveObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAD7DCA81FBF0E050089AF60 /* FizzBuzzDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DCA71FBF0E040089AF60 /* FizzBuzzDetector.m */; };
+		BAD7DCAB1FBF11060089AF60 /* FizzBuzzPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DCAA1FBF11060089AF60 /* FizzBuzzPrinter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BA3F429A1FBCAB3700954623 /* ABCDServiceFoundation.framework in Embed Frameworks */,
+				BAD7DCA51FBF0DE40089AF60 /* ReactiveObjC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +74,14 @@
 		BA79071E1FBC67D300C3EC63 /* ABCDServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDServiceManager.m; sourceTree = "<group>"; };
 		BA7907201FBC680D00C3EC63 /* ABCDService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDService.h; sourceTree = "<group>"; };
 		BA7907211FBC680D00C3EC63 /* ABCDService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDService.m; sourceTree = "<group>"; };
+		BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDThreadedService.h; sourceTree = "<group>"; };
+		BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDThreadedService.m; sourceTree = "<group>"; };
+		BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCDThreadedService+Private.h"; sourceTree = "<group>"; };
+		BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/iOS/ReactiveObjC.framework; sourceTree = SOURCE_ROOT; };
+		BAD7DCA61FBF0E040089AF60 /* FizzBuzzDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FizzBuzzDetector.h; sourceTree = "<group>"; };
+		BAD7DCA71FBF0E040089AF60 /* FizzBuzzDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FizzBuzzDetector.m; sourceTree = "<group>"; };
+		BAD7DCA91FBF11060089AF60 /* FizzBuzzPrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FizzBuzzPrinter.h; sourceTree = "<group>"; };
+		BAD7DCAA1FBF11060089AF60 /* FizzBuzzPrinter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FizzBuzzPrinter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3F42991FBCAB3700954623 /* ABCDServiceFoundation.framework in Frameworks */,
+				BAD7DCA41FBF0DE40089AF60 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +112,10 @@
 				BA79071E1FBC67D300C3EC63 /* ABCDServiceManager.m */,
 				BA7907201FBC680D00C3EC63 /* ABCDService.h */,
 				BA7907211FBC680D00C3EC63 /* ABCDService.m */,
+				BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */,
+				BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */,
 				BA3F428B1FBCA62400954623 /* ABCDService+Private.h */,
+				BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */,
 				BA3F42941FBCAB1200954623 /* Info.plist */,
 			);
 			path = ABCDServiceFoundation;
@@ -122,10 +142,15 @@
 		BA7907061FBC67AF00C3EC63 /* new-arch */ = {
 			isa = PBXGroup;
 			children = (
+				BAD7DCA11FBF0D580089AF60 /* Frameworks */,
 				BA7907071FBC67AF00C3EC63 /* AppDelegate.h */,
 				BA7907081FBC67AF00C3EC63 /* AppDelegate.m */,
 				BA79070A1FBC67AF00C3EC63 /* ViewController.h */,
 				BA79070B1FBC67AF00C3EC63 /* ViewController.m */,
+				BAD7DCA61FBF0E040089AF60 /* FizzBuzzDetector.h */,
+				BAD7DCA71FBF0E040089AF60 /* FizzBuzzDetector.m */,
+				BAD7DCA91FBF11060089AF60 /* FizzBuzzPrinter.h */,
+				BAD7DCAA1FBF11060089AF60 /* FizzBuzzPrinter.m */,
 				BA79070D1FBC67AF00C3EC63 /* Main.storyboard */,
 				BA7907101FBC67AF00C3EC63 /* Assets.xcassets */,
 				BA7907121FBC67AF00C3EC63 /* LaunchScreen.storyboard */,
@@ -133,6 +158,14 @@
 				BA7907161FBC67AF00C3EC63 /* main.m */,
 			);
 			path = "new-arch";
+			sourceTree = "<group>";
+		};
+		BAD7DCA11FBF0D580089AF60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3F42A31FBCAB6A00954623 /* ABCDServiceManager.h in Headers */,
+				BAD7DC9D1FBF08100089AF60 /* ABCDThreadedService.h in Headers */,
 				BA3F42951FBCAB1200954623 /* ABCDServiceFoundation.h in Headers */,
 				BA3F42A51FBCAB6A00954623 /* ABCDService.h in Headers */,
 				BA3F42A71FBCAB6A00954623 /* ABCDService+Private.h in Headers */,
+				BAD7DCA01FBF09CF0089AF60 /* ABCDThreadedService+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +289,7 @@
 			files = (
 				BA3F42A41FBCAB6A00954623 /* ABCDServiceManager.m in Sources */,
 				BA3F42A61FBCAB6A00954623 /* ABCDService.m in Sources */,
+				BAD7DC9E1FBF08100089AF60 /* ABCDThreadedService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA79070C1FBC67AF00C3EC63 /* ViewController.m in Sources */,
+				BAD7DCA81FBF0E050089AF60 /* FizzBuzzDetector.m in Sources */,
 				BA7907171FBC67AF00C3EC63 /* main.m in Sources */,
+				BAD7DCAB1FBF11060089AF60 /* FizzBuzzPrinter.m in Sources */,
 				BA7907091FBC67AF00C3EC63 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +493,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TVZPUPLA8S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "new-arch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aabbccdouble.new-arch";
@@ -469,6 +511,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TVZPUPLA8S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "new-arch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aabbccdouble.new-arch";

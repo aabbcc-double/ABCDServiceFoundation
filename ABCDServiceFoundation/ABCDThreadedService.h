@@ -22,11 +22,10 @@
  SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
+#import <ABCDServiceFoundation/ABCDServiceFoundation.h>
 
-FOUNDATION_EXPORT double ABCDServiceVersionNumber;
-FOUNDATION_EXPORT const unsigned char ABCDServiceVersionString[];
+@interface ABCDThreadedService : ABCDService
+@property (readonly, nonnull, nonatomic) NSThread *thread;
 
-#import <ABCDServiceFoundation/ABCDServiceManager.h>
-#import <ABCDServiceFoundation/ABCDService.h>
-#import <ABCDServiceFoundation/ABCDThreadedService.h>
+- (void)restart;
+@end

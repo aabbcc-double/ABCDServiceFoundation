@@ -22,11 +22,8 @@
  SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
+#import "ABCDThreadedService.h"
 
-FOUNDATION_EXPORT double ABCDServiceVersionNumber;
-FOUNDATION_EXPORT const unsigned char ABCDServiceVersionString[];
-
-#import <ABCDServiceFoundation/ABCDServiceManager.h>
-#import <ABCDServiceFoundation/ABCDService.h>
-#import <ABCDServiceFoundation/ABCDThreadedService.h>
+@interface ABCDThreadedService ()
+- (void)private_setThread:(NSThread *)thread;
+@end

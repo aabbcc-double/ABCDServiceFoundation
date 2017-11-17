@@ -24,6 +24,7 @@
 
 #import "ABCDServiceManager.h"
 #import "ABCDService+Private.h"
+#import "ABCDThreadedService+Private.h"
 
 @implementation ABCDServiceManager {
     NSMutableArray<ABCDService *> *_runningServices;
@@ -60,15 +61,16 @@
 
 - (void)startService:(ABCDService *)service {
     [_runningServices addObject:service];
-    
-    NSThread *thread = [[NSThread alloc] initWithTarget:service selector:@selector(start) object:nil];
-    [service private_setCurrentThread:thread];
     [service private_setServiceManager:self];
-    [thread start];
+    [service private_start];
 }
 
 - (void)finishService:(ABCDService *)service {
-    [service performSelectorOnMainThread:@selector(private_finish) withObject:nil waitUntilDone:NO];
+    if ([service isKindOfClass:[ABCDThreadedService class]]) {
+        [service performSelectorOnMainThread:@selector(private_finish) withObject:nil waitUntilDone:NO];
+    } else {
+        [service performSelectorInBackground:@selector(private_finish) withObject:nil];
+    }
     
     [_runningServices removeObject:service];
 }

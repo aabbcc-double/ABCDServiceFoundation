@@ -32,7 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) NSString *identifier;
 @property (nonatomic, readonly, nullable, weak) ABCDServiceManager *serviceManager;
 @property (nonatomic, readonly) BOOL shouldFinish;
-@property (nonatomic, readonly) NSThread *thread;
 
 - (instancetype)init;
 - (instancetype)initWithIdentifier:(nullable NSString *)identifier NS_DESIGNATED_INITIALIZER;
