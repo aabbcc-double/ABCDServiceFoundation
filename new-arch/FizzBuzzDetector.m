@@ -42,7 +42,6 @@
         
         BOOL isFizz = integer % 3 == 0;
         BOOL isBuzz = integer % 5 == 0;
-        integer++;
         
         FizzBuzzType type = FizzBuzzTypeNone;
         if (isFizz) {
@@ -55,6 +54,8 @@
         
         FizzBuzzModel *fizzBuzz = [[FizzBuzzModel alloc] initWithInteger:integer type:type];
         [_detectedNumbers sendNext:fizzBuzz];
+        
+        integer++;
     }
     
     [self finish];
