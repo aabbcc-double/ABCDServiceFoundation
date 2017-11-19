@@ -32,8 +32,10 @@
 }
 
 - (void)private_start {
-    _thread = [[NSThread alloc] initWithTarget:self selector:@selector(threaded_start) object:nil];
-    [_thread start];
+    if (_thread == nil || [_thread isFinished]) {
+        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(threaded_start) object:nil];
+        [_thread start];
+    }
 }
 
 - (void)threaded_start {
@@ -44,12 +46,6 @@
 
 - (void)private_finish {
     [self.thread cancel];
-}
-
-- (void)restart {
-    if ([self.thread isFinished]) {
-        [self private_start];
-    }
 }
 
 - (void)private_setThread:(NSThread *)thread {

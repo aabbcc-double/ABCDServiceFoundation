@@ -60,7 +60,9 @@
 }
 
 - (void)startService:(ABCDService *)service {
-    [_runningServices addObject:service];
+    if ([_runningServices containsObject:service] == NO) {
+        [_runningServices addObject:service];
+    }
     [service private_setServiceManager:self];
     [service private_start];
 }
@@ -73,5 +75,13 @@
     }
     
     [_runningServices removeObject:service];
+}
+
+- (void)dealloc {
+    NSArray *services = [_runningServices copy];
+    
+    for (ABCDService *service in services) {
+        [self finishService:service];
+    }
 }
 @end

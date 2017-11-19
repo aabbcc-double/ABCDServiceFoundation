@@ -21,6 +21,8 @@
 		BA7907111FBC67AF00C3EC63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7907101FBC67AF00C3EC63 /* Assets.xcassets */; };
 		BA7907141FBC67AF00C3EC63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7907121FBC67AF00C3EC63 /* LaunchScreen.storyboard */; };
 		BA7907171FBC67AF00C3EC63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7907161FBC67AF00C3EC63 /* main.m */; };
+		BAD57D4C1FC1134F00D19DDD /* ThreadedServicesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD57D4B1FC1134F00D19DDD /* ThreadedServicesTests.m */; };
+		BAD57D4E1FC1134F00D19DDD /* ABCDServiceFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */; };
 		BAD7DC9D1FBF08100089AF60 /* ABCDThreadedService.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAD7DC9E1FBF08100089AF60 /* ABCDThreadedService.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */; };
 		BAD7DCA01FBF09CF0089AF60 /* ABCDThreadedService+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */; };
@@ -37,6 +39,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = BA3F42901FBCAB1200954623;
 			remoteInfo = ABCDService;
+		};
+		BAD57D4F1FC1134F00D19DDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA7906FC1FBC67AF00C3EC63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA3F42901FBCAB1200954623;
+			remoteInfo = ABCDServiceFoundation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -74,6 +83,9 @@
 		BA79071E1FBC67D300C3EC63 /* ABCDServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDServiceManager.m; sourceTree = "<group>"; };
 		BA7907201FBC680D00C3EC63 /* ABCDService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDService.h; sourceTree = "<group>"; };
 		BA7907211FBC680D00C3EC63 /* ABCDService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDService.m; sourceTree = "<group>"; };
+		BAD57D491FC1134F00D19DDD /* ABCDServiceFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABCDServiceFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD57D4B1FC1134F00D19DDD /* ThreadedServicesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadedServicesTests.m; sourceTree = "<group>"; };
+		BAD57D4D1FC1134F00D19DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDThreadedService.h; sourceTree = "<group>"; };
 		BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDThreadedService.m; sourceTree = "<group>"; };
 		BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCDThreadedService+Private.h"; sourceTree = "<group>"; };
@@ -98,6 +110,14 @@
 			files = (
 				BA3F42991FBCAB3700954623 /* ABCDServiceFoundation.framework in Frameworks */,
 				BAD7DCA41FBF0DE40089AF60 /* ReactiveObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD57D461FC1134F00D19DDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD57D4E1FC1134F00D19DDD /* ABCDServiceFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +146,7 @@
 			children = (
 				BA3F42921FBCAB1200954623 /* ABCDServiceFoundation */,
 				BA7907061FBC67AF00C3EC63 /* new-arch */,
+				BAD57D4A1FC1134F00D19DDD /* ABCDServiceFoundationTests */,
 				BA7907051FBC67AF00C3EC63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,6 +156,7 @@
 			children = (
 				BA7907041FBC67AF00C3EC63 /* new-arch.app */,
 				BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */,
+				BAD57D491FC1134F00D19DDD /* ABCDServiceFoundationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +180,15 @@
 				BA7907161FBC67AF00C3EC63 /* main.m */,
 			);
 			path = "new-arch";
+			sourceTree = "<group>";
+		};
+		BAD57D4A1FC1134F00D19DDD /* ABCDServiceFoundationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAD57D4B1FC1134F00D19DDD /* ThreadedServicesTests.m */,
+				BAD57D4D1FC1134F00D19DDD /* Info.plist */,
+			);
+			path = ABCDServiceFoundationTests;
 			sourceTree = "<group>";
 		};
 		BAD7DCA11FBF0D580089AF60 /* Frameworks */ = {
@@ -224,6 +255,24 @@
 			productReference = BA7907041FBC67AF00C3EC63 /* new-arch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BAD57D481FC1134F00D19DDD /* ABCDServiceFoundationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAD57D511FC1134F00D19DDD /* Build configuration list for PBXNativeTarget "ABCDServiceFoundationTests" */;
+			buildPhases = (
+				BAD57D451FC1134F00D19DDD /* Sources */,
+				BAD57D461FC1134F00D19DDD /* Frameworks */,
+				BAD57D471FC1134F00D19DDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAD57D501FC1134F00D19DDD /* PBXTargetDependency */,
+			);
+			name = ABCDServiceFoundationTests;
+			productName = ABCDServiceFoundationTests;
+			productReference = BAD57D491FC1134F00D19DDD /* ABCDServiceFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +287,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					BA7907031FBC67AF00C3EC63 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					BAD57D481FC1134F00D19DDD = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -258,6 +311,7 @@
 			targets = (
 				BA3F42901FBCAB1200954623 /* ABCDServiceFoundation */,
 				BA7907031FBC67AF00C3EC63 /* new-arch */,
+				BAD57D481FC1134F00D19DDD /* ABCDServiceFoundationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +331,13 @@
 				BA7907141FBC67AF00C3EC63 /* LaunchScreen.storyboard in Resources */,
 				BA7907111FBC67AF00C3EC63 /* Assets.xcassets in Resources */,
 				BA79070F1FBC67AF00C3EC63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD57D471FC1134F00D19DDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +366,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAD57D451FC1134F00D19DDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD57D4C1FC1134F00D19DDD /* ThreadedServicesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -312,6 +381,11 @@
 			isa = PBXTargetDependency;
 			target = BA3F42901FBCAB1200954623 /* ABCDServiceFoundation */;
 			targetProxy = BA3F429B1FBCAB3700954623 /* PBXContainerItemProxy */;
+		};
+		BAD57D501FC1134F00D19DDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA3F42901FBCAB1200954623 /* ABCDServiceFoundation */;
+			targetProxy = BAD57D4F1FC1134F00D19DDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -523,6 +597,30 @@
 			};
 			name = Release;
 		};
+		BAD57D521FC1134F00D19DDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ABCDServiceFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aabbccdouble.ABCDServiceFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAD57D531FC1134F00D19DDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ABCDServiceFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aabbccdouble.ABCDServiceFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -549,6 +647,15 @@
 			buildConfigurations = (
 				BA79071B1FBC67AF00C3EC63 /* Debug */,
 				BA79071C1FBC67AF00C3EC63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAD57D511FC1134F00D19DDD /* Build configuration list for PBXNativeTarget "ABCDServiceFoundationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAD57D521FC1134F00D19DDD /* Debug */,
+				BAD57D531FC1134F00D19DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -26,6 +26,4 @@
 
 @interface ABCDThreadedService : ABCDService
 @property (readonly, nonnull, nonatomic) NSThread *thread;
-
-- (void)restart;
 @end
