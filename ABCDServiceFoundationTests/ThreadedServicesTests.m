@@ -72,7 +72,7 @@ static int getThreadsCount()
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
     expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:1];
+    [self waitForExpectations:@[expectation] timeout:2];
     
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
 }
@@ -102,7 +102,7 @@ static int getThreadsCount()
     serviceManager = nil;
     XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
     expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:1];
+    [self waitForExpectations:@[expectation] timeout:2];
     
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
 }
@@ -120,7 +120,7 @@ static int getThreadsCount()
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
     expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:1];
+    [self waitForExpectations:@[expectation] timeout:2];
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
     
     XCTAssertEqual(serviceManager.runningServices.count, 0);
