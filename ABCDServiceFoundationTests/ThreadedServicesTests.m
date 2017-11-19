@@ -1,11 +1,13 @@
 #import <XCTest/XCTest.h>
 
+#import "ABCDServiceManager.h"
+#import "ABCDThreadedService.h"
+
+#if !(BYPASS_THREAD_COUNT_TESTING)
 #import <mach/mach_init.h>
 #import <mach/thread_policy.h>
 #import <mach/task.h>
 #import <mach/vm_map.h>
-#import "ABCDServiceManager.h"
-#import "ABCDThreadedService.h"
 
 /**
  * @return -1 on error, else the number of threads for the current process
@@ -29,6 +31,7 @@ static int getThreadsCount()
     
     return threadCount;
 }
+#endif
 
 @interface LoopingService: ABCDThreadedService
 @end
