@@ -25,7 +25,6 @@
 		BAD57D4E1FC1134F00D19DDD /* ABCDServiceFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */; };
 		BAD7DC9D1FBF08100089AF60 /* ABCDThreadedService.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAD7DC9E1FBF08100089AF60 /* ABCDThreadedService.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */; };
-		BAD7DCA01FBF09CF0089AF60 /* ABCDThreadedService+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */; };
 		BAD7DCA41FBF0DE40089AF60 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */; };
 		BAD7DCA51FBF0DE40089AF60 /* ReactiveObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAD7DCA81FBF0E050089AF60 /* FizzBuzzDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7DCA71FBF0E040089AF60 /* FizzBuzzDetector.m */; };
@@ -88,7 +87,6 @@
 		BAD57D4D1FC1134F00D19DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDThreadedService.h; sourceTree = "<group>"; };
 		BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCDThreadedService.m; sourceTree = "<group>"; };
-		BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCDThreadedService+Private.h"; sourceTree = "<group>"; };
 		BAD7DCA21FBF0D6B0089AF60 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/iOS/ReactiveObjC.framework; sourceTree = SOURCE_ROOT; };
 		BAD7DCA61FBF0E040089AF60 /* FizzBuzzDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FizzBuzzDetector.h; sourceTree = "<group>"; };
 		BAD7DCA71FBF0E040089AF60 /* FizzBuzzDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FizzBuzzDetector.m; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				BAD7DC9B1FBF08100089AF60 /* ABCDThreadedService.h */,
 				BAD7DC9C1FBF08100089AF60 /* ABCDThreadedService.m */,
 				BA3F428B1FBCA62400954623 /* ABCDService+Private.h */,
-				BAD7DC9F1FBF08C10089AF60 /* ABCDThreadedService+Private.h */,
 				BA3F42941FBCAB1200954623 /* Info.plist */,
 			);
 			path = ABCDServiceFoundation;
@@ -211,7 +208,6 @@
 				BA3F42951FBCAB1200954623 /* ABCDServiceFoundation.h in Headers */,
 				BA3F42A51FBCAB6A00954623 /* ABCDService.h in Headers */,
 				BA3F42A71FBCAB6A00954623 /* ABCDService+Private.h in Headers */,
-				BAD7DCA01FBF09CF0089AF60 /* ABCDThreadedService+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

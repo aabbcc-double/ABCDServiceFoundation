@@ -24,7 +24,7 @@
 
 #import "ABCDServiceManager.h"
 #import "ABCDService+Private.h"
-#import "ABCDThreadedService+Private.h"
+#import "ABCDThreadedService.h"
 
 @implementation ABCDServiceManager {
     NSMutableArray<ABCDService *> *_runningServices;

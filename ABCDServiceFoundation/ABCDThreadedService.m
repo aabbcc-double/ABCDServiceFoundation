@@ -23,7 +23,6 @@
  */
 
 #import "ABCDThreadedService.h"
-#import "ABCDThreadedService+Private.h"
 #import "ABCDService+Private.h"
 
 @implementation ABCDThreadedService
@@ -46,9 +45,5 @@
 
 - (void)private_finish {
     [self.thread cancel];
-}
-
-- (void)private_setThread:(NSThread *)thread {
-    _thread = thread;
 }
 @end
