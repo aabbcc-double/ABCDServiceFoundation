@@ -33,6 +33,7 @@
 - (void)private_start {
     if (_thread == nil || [_thread isFinished]) {
         _thread = [[NSThread alloc] initWithTarget:self selector:@selector(threaded_start) object:nil];
+        _thread.name = self.identifier;
         [_thread start];
     }
 }

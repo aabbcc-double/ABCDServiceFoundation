@@ -74,6 +74,7 @@
         [service performSelectorInBackground:@selector(private_finish) withObject:nil];
     }
     
+    [service private_setServiceManager:nil];
     [_runningServices removeObject:service];
 }
 

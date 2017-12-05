@@ -24,9 +24,13 @@
 
 #import "ABCDService.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ABCDService ()
-- (void)private_setServiceManager:(ABCDServiceManager *)serviceManager;
+- (void)private_setServiceManager:(nullable ABCDServiceManager *)serviceManager;
 
 - (void)private_start;
 - (void)private_finish;
 @end
+
+NS_ASSUME_NONNULL_END
