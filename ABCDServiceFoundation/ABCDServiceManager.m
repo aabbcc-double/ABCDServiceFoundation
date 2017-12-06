@@ -69,7 +69,7 @@
 
 - (void)finishService:(ABCDService *)service {
     if ([service isKindOfClass:[ABCDThreadedService class]]) {
-        [service performSelectorOnMainThread:@selector(private_finish) withObject:nil waitUntilDone:NO];
+        [service performSelectorOnMainThread:@selector(private_finish) withObject:nil waitUntilDone:YES];
     } else {
         [service performSelectorInBackground:@selector(private_finish) withObject:nil];
     }

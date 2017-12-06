@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1B50291FD8194B004BF3FA /* ServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B50281FD8194B004BF3FA /* ServiceTests.m */; };
 		BA3F42951FBCAB1200954623 /* ABCDServiceFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3F42931FBCAB1200954623 /* ABCDServiceFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA3F42991FBCAB3700954623 /* ABCDServiceFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */; };
 		BA3F429A1FBCAB3700954623 /* ABCDServiceFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA1B50281FD8194B004BF3FA /* ServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceTests.m; sourceTree = "<group>"; };
 		BA3F428B1FBCA62400954623 /* ABCDService+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCDService+Private.h"; sourceTree = "<group>"; };
 		BA3F42911FBCAB1200954623 /* ABCDServiceFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABCDServiceFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3F42931FBCAB1200954623 /* ABCDServiceFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCDServiceFoundation.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				BAD57D4B1FC1134F00D19DDD /* ThreadedServicesTests.m */,
 				BAD57D4D1FC1134F00D19DDD /* Info.plist */,
+				BA1B50281FD8194B004BF3FA /* ServiceTests.m */,
 			);
 			path = ABCDServiceFoundationTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAD57D4C1FC1134F00D19DDD /* ThreadedServicesTests.m in Sources */,
+				BA1B50291FD8194B004BF3FA /* ServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

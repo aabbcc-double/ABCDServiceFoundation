@@ -48,9 +48,7 @@
 }
 
 - (void)private_setServiceManager:(ABCDServiceManager *)serviceManager {
-    @synchronized(self) {
-        _serviceManager = serviceManager;
-    }
+    _serviceManager = serviceManager;
 }
 
 - (void)private_start {
@@ -66,6 +64,6 @@
 }
 
 - (void)finish {
-    [self.serviceManager finishService:self];
+    [self.serviceManager performSelectorOnMainThread:@selector(finishService:) withObject:self waitUntilDone:YES];
 }
 @end

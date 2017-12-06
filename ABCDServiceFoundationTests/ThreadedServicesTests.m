@@ -37,6 +37,10 @@ static int getThreadsCount()
 @end
 
 @implementation LoopingService
+- (instancetype)init {
+    return [self initWithIdentifier:@"LoopingService"];
+}
+
 - (void)start {
     while (!self.shouldFinish) {
         /* no op */
@@ -48,8 +52,12 @@ static int getThreadsCount()
 @end
 
 @implementation NoOpService
+- (instancetype)init {
+    return [self initWithIdentifier:@"NoOpService"];
+}
+
 - (void)start {
-    /* no op */
+    NSLog(@"no op start");
 }
 @end
 
@@ -64,7 +72,7 @@ static int getThreadsCount()
 - (void)testThreadedService {
     ABCDServiceManager *serviceManager = [[ABCDServiceManager alloc] init];
     
-    LoopingService *loopingService = [[LoopingService alloc] initWithIdentifier:nil];
+    LoopingService *loopingService = [[LoopingService alloc] init];
 #if !(BYPASS_THREAD_COUNT_TESTING)
     int initialThreadsCount = getThreadsCount();
     XCTAssertTrue(initialThreadsCount > 0);
@@ -76,10 +84,13 @@ static int getThreadsCount()
 #endif
     
     [serviceManager finishService:loopingService];
+    XCTAssertNil(loopingService.serviceManager);
     
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
-    expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:2];
+    XCTestExpectation *ex = [self expectationWithDescription:@"Waiting"];
+    [ex setInverted:YES];
+    [self waitForExpectations:@[ex] timeout:1];
+    XCTAssertFalse(loopingService.thread.isExecuting);
+    XCTAssertTrue(loopingService.thread.isFinished);
 #if !(BYPASS_THREAD_COUNT_TESTING)
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
 #endif
@@ -88,7 +99,7 @@ static int getThreadsCount()
 - (void)testDeallocFinishingServices {
     ABCDServiceManager *serviceManager = [[ABCDServiceManager alloc] init];
     
-    LoopingService *loopingService = [[LoopingService alloc] initWithIdentifier:nil];
+    LoopingService *loopingService = [[LoopingService alloc] init];
 #if !(BYPASS_THREAD_COUNT_TESTING)
     int initialThreadsCount = getThreadsCount();
     XCTAssertTrue(initialThreadsCount > 0);
@@ -100,12 +111,12 @@ static int getThreadsCount()
 #endif
     
     
-    loopingService = [[LoopingService alloc] initWithIdentifier:nil];
+    loopingService = [[LoopingService alloc] init];
     [serviceManager startService:loopingService];
 #if !(BYPASS_THREAD_COUNT_TESTING)
     XCTAssertEqual(getThreadsCount(), initialThreadsCount + 2);
 #endif
-
+    
     XCTAssertEqual(serviceManager.runningServices.count, 2);
     
     [serviceManager startService:loopingService];
@@ -116,9 +127,12 @@ static int getThreadsCount()
     XCTAssertEqual(serviceManager.runningServices.count, 2);
     
     serviceManager = nil;
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
-    expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:2];
+    XCTestExpectation *ex = [self expectationWithDescription:@"Waiting"];
+    [ex setInverted:YES];
+    [self waitForExpectations:@[ex] timeout:1];
+    XCTAssertNil(loopingService.serviceManager);
+    XCTAssertFalse(loopingService.thread.isExecuting);
+    XCTAssertTrue(loopingService.thread.isFinished);
 #if !(BYPASS_THREAD_COUNT_TESTING)
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
 #endif
@@ -128,18 +142,19 @@ static int getThreadsCount()
     ABCDServiceManager *serviceManager = [[ABCDServiceManager alloc] init];
     
     NoOpService *noOpService = [[NoOpService alloc] init];
-    XCTAssertEqual(noOpService.identifier, nil);
     
 #if !(BYPASS_THREAD_COUNT_TESTING)
     int initialThreadsCount = getThreadsCount();
     XCTAssertTrue(initialThreadsCount > 0);
 #endif
-
-    [serviceManager startService:noOpService];
     
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Waiting for unrolling"];
-    expectation.inverted = YES;
-    [self waitForExpectations:@[expectation] timeout:2];
+    [serviceManager startService:noOpService];
+    XCTestExpectation *ex = [self expectationWithDescription:@"Waiting"];
+    [ex setInverted:YES];
+    [self waitForExpectations:@[ex] timeout:1];
+    XCTAssertNil(noOpService.serviceManager);
+    XCTAssertFalse(noOpService.thread.isExecuting);
+    XCTAssertTrue(noOpService.thread.isFinished);
 #if !(BYPASS_THREAD_COUNT_TESTING)
     XCTAssertEqual(getThreadsCount(), initialThreadsCount);
 #endif

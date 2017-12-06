@@ -26,10 +26,6 @@
 #import "ABCDService+Private.h"
 
 @implementation ABCDThreadedService
-- (BOOL)shouldFinish {
-    return [self.thread isCancelled];
-}
-
 - (void)private_start {
     if (_thread == nil || [_thread isFinished]) {
         _thread = [[NSThread alloc] initWithTarget:self selector:@selector(threaded_start) object:nil];
@@ -40,11 +36,7 @@
 
 - (void)threaded_start {
     [self start];
-    
-    [self finish];
-}
 
-- (void)private_finish {
-    [self.thread cancel];
+    [self finish];
 }
 @end
